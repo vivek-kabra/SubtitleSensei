@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="title">
+        <h1 class="heading">Subtitle Sensei</h1>
+    </div>
+    
+    <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data" onsubmit="showLoading()">
+
+        <div class="upload">
+
+            <div id="mp4">
+            <label for="mp4-upload">Upload MP4 File:</label>
+            <input type="file" id="mp4-upload" name="mp4_file" accept=".mp4" required><br><br>
+            </div>
+
+            <div id="srt">
+            <label for="srt-upload">Upload SRT File:</label>
+            <input type="file" id="srt-upload" name="srt_file" accept=".srt" required><br><br>
+            </div>
+            <button type="submit" id="submit-btn">Submit</button>
+        </div>
+    </form>
+    <div class="buttons">
+    </div>
+    <img id="loading-gif" src="{{ url_for('static', filename='Loading_2.gif') }}" alt="Loading..." style="display: none;">
+    <script>
+        function showLoading() {
+            document.getElementById('submit-btn').style.display = 'none';
+            document.getElementById('loading-gif').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('loading-gif').style.display = 'none';
+            }, 60000);
+        }
+    </script>
+</body>
+</html>

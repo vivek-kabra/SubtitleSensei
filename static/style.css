@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./backdrop4.jpg');
+    background-size:cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    font-family: 'Aleo';
+}
+.title {
+    font-size: 3rem;
+    color: white;
+    padding: 2rem;
+}
+.upload{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+    padding: 3rem;
+    color: white;
+
+}
+.buttons {
+    font-size: 2rem;
+}
+#submit {
+    width: 5rem;
+}
+#submit-btn {
+    position: relative;
+    padding: 10px 20px;
+}
+
+#loading-gif{
+    width: 50px;
+    height: 50px;
+}
+
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+    
+/* #mp4 {
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+#srt {
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+    padding: 0.5rem;
+} */
