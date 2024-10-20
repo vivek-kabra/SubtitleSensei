@@ -10,7 +10,7 @@ import re
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
 
-# Create the uploads folder if it doesn't exist
+
 if not os.path.exists(app.config['UPLOAD_FOLDER']):
     os.makedirs(app.config['UPLOAD_FOLDER'])
 
@@ -23,18 +23,18 @@ def index():
 
 @app.route('/upload', methods=['POST'])
 def upload_files():
-    # Get the uploaded files
+    
     mp4_file = request.files['mp4_file']
     srt_file = request.files['srt_file']
 
     if mp4_file and srt_file:
-        # Save the files to the upload folder
+        
         mp4_path = os.path.join(app.config['UPLOAD_FOLDER'], mp4_file.filename)
         srt_path = os.path.join(app.config['UPLOAD_FOLDER'], srt_file.filename)
         mp4_file.save(mp4_path)
         srt_file.save(srt_path)
 
-        # Read the original SRT file content
+        
         with open(srt_path, 'r', encoding='utf-8') as f:
             original_srt = f.read()
         
@@ -70,7 +70,7 @@ def upload_files():
                 start_time = word.start
                 end_time = word.end
                 
-                # Convert times to HH:MM:SS,MS
+                
                 start_time_hms = "{:02d}:{:02d}:{:02d},{:03d}".format(
                     int(start_time // 3600),
                     int((start_time % 3600) // 60),
