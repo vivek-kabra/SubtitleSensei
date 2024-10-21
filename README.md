@@ -6,6 +6,7 @@ An awesome tool to fix your unsynced subtitle files to sync with the video!
 ## Set-up and use
 1. Make sure Python is installed in your system.
 2. Install the following Python libraries into your system:
+ - flask
  - ffmpeg
  - PyTorch
  - Whisper
